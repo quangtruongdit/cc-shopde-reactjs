@@ -1,14 +1,14 @@
 // components
 import Logo from '@components/Logo';
-import {LoginSocialGoogle, LoginSocialFacebook} from 'reactjs-social-login';
-import {toast} from 'react-toastify';
+import { LoginSocialGoogle, LoginSocialFacebook } from 'reactjs-social-login';
+import { toast } from 'react-toastify';
 import Spring from '@components/Spring';
 import PasswordInput from '@components/PasswordInput';
 
 // hooks
-import {useForm, Controller} from 'react-hook-form';
-import {useNavigate} from 'react-router-dom';
-import {useWindowSize} from 'react-use';
+import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { useWindowSize } from 'react-use';
 
 // utils
 import classNames from 'classnames';
@@ -19,9 +19,9 @@ import google from '@assets/icons/google.png';
 import facebook from '@assets/icons/facebook.png';
 
 const AuthLayout = () => {
-    const {width} = useWindowSize();
+    const { width } = useWindowSize();
     const navigate = useNavigate();
-    const {register, handleSubmit, formState: {errors}, control} = useForm({
+    const { register, handleSubmit, formState: { errors }, control } = useForm({
         defaultValues: {
             email: '',
             password: ''
@@ -45,11 +45,11 @@ const AuthLayout = () => {
             {
                 width >= 1024 &&
                 <div className="flex flex-col justify-center items-center lg:p-[60px]">
-                    <Logo imgClass="w-[60px]" textClass="text-[28px]"/>
+                    <Logo imgClass="w-[60px]" textClass="text-[28px]" />
                     <p className="text-center tracking-[0.2px] font-semibold text-lg leading-6 max-w-[540px] my-7 mx-auto">
                         Gain data-based insights, view progress at a glance, and manage your organization smarter
                     </p>
-                    <img className="max-w-[780px]" src={media} alt="media"/>
+                    <img className="max-w-[780px]" src={media} alt="media" />
                 </div>
             }
             <div className="bg-widget flex items-center justify-center w-full py-10 px-4 lg:p-[60px]">
@@ -64,24 +64,24 @@ const AuthLayout = () => {
                         <div className="flex flex-col gap-5">
                             <div className="field-wrapper">
                                 <label htmlFor="email" className="field-label">E-mail</label>
-                                <input className={classNames('field-input', {'field-input--error': errors.email})}
-                                       id="email"
-                                       type="text"
-                                       placeholder="Your E-mail address"
-                                       {...register('email', {required: true, pattern: /^\S+@\S+$/i})}/>
+                                <input className={classNames('field-input', { 'field-input--error': errors.email })}
+                                    id="email"
+                                    type="text"
+                                    placeholder="Your E-mail address"
+                                    {...register('email', { required: true, pattern: /^\S+@\S+$/i })} />
                             </div>
                             <Controller name="password"
-                                        control={control}
-                                        rules={{required: true}}
-                                        render={({field}) => (
-                                            <PasswordInput id="password"
-                                                           placeholder="Your password"
-                                                           error={errors.password}
-                                                           innerRef={field.ref}
-                                                           isInvalid={errors.password}
-                                                           value={field.value}
-                                                           onChange={field.onChange}/>
-                                        )}/>
+                                control={control}
+                                rules={{ required: true }}
+                                render={({ field }) => (
+                                    <PasswordInput id="password"
+                                        placeholder="Your password"
+                                        error={errors.password}
+                                        innerRef={field.ref}
+                                        isInvalid={errors.password}
+                                        value={field.value}
+                                        onChange={field.onChange} />
+                                )} />
                         </div>
                         <div className="flex flex-col items-center gap-6 mt-4 mb-10">
                             <button className="text-btn" onClick={handlePasswordReminder}>
@@ -92,24 +92,24 @@ const AuthLayout = () => {
                     </form>
                     <div>
                         <div className="relative">
-                            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-border"/>
+                            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-border" />
                             <span className="flex items-center justify-center relative z-10 w-11 h-[23px] m-auto bg-widget">
                                 or
                             </span>
                         </div>
                         <div className="grid grid-cols-1 gap-4 2xs:grid-cols-2 xs:gap-[30px] mt-[30px] mb-9">
                             <LoginSocialGoogle className="btn btn--social"
-                                               client_id={import.meta.env.VITE_GOOGLE_APP_ID}
-                                               onReject={onReject}
-                                               onResolve={onSubmit}>
-                                <img className="icon" src={google} alt="Google"/>
+                                client_id={import.meta.env.VITE_GOOGLE_APP_ID}
+                                onReject={onReject}
+                                onResolve={onSubmit}>
+                                <img className="icon" src={google} alt="Google" />
                                 Google
                             </LoginSocialGoogle>
                             <LoginSocialFacebook className="btn btn--social"
-                                                 appId={import.meta.env.VITE_FB_APP_ID}
-                                                 onReject={onReject}
-                                                 onResolve={onSubmit}>
-                                <img className="icon" src={facebook} alt="Facebook"/>
+                                appId={import.meta.env.VITE_FB_APP_ID}
+                                onReject={onReject}
+                                onResolve={onSubmit}>
+                                <img className="icon" src={facebook} alt="Facebook" />
                                 Facebook
                             </LoginSocialFacebook>
                         </div>
