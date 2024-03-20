@@ -1,19 +1,9 @@
-// components
-import {Helmet} from 'react-helmet';
+const DocumentTitle = () => {
+  return (
+    <>
+      <p>DocumentTitle</p>
+    </>
+  );
+};
 
-// utils
-import PropTypes from 'prop-types';
-
-const DocumentTitle = ({title}) => {
-    return (
-        <Helmet>
-            <title>{title} | React E-commerce Dashboard Template</title>
-        </Helmet>
-    )
-}
-
-DocumentTitle.propTypes = {
-    title: PropTypes.string.isRequired
-}
-
-export default DocumentTitle
+export default DocumentTitle;
