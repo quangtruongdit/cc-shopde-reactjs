@@ -31,8 +31,8 @@ import Copyright from "@components/Copyright";
 import AppBar from "@layout/AppBar";
 
 // pages
-const Login = lazy(() => import("./pages_shopde/Login"));
-// const SalesAnalytics = lazy(() => import("pages_shopde/SalesAnalytics"));
+const Login = lazy(() => import("./pages/Login"));
+const SalesAnalytics = lazy(() => import("./pages/SalesAnalytics"));
 // const SellersList = lazy(() => import("pages_shopde/SellersList"));
 // const SellersTable = lazy(() => import("pages_shopde/SellersTable"));
 // const SellersGrid = lazy(() => import("pages_shopde/SellersGrid"));
