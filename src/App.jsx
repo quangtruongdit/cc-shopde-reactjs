@@ -33,7 +33,7 @@ import AppBar from "@layout/AppBar";
 // pages
 const Login = lazy(() => import("./pages/Login"));
 const SalesAnalytics = lazy(() => import("./pages/SalesAnalytics"));
-// const SellersList = lazy(() => import("pages_shopde/SellersList"));
+const SellersList = lazy(() => import("./pages/SellersList"));
 // const SellersTable = lazy(() => import("pages_shopde/SellersTable"));
 // const SellersGrid = lazy(() => import("pages_shopde/SellersGrid"));
 // const SellerProfile = lazy(() => import("pages_shopde/SellerProfile"));
@@ -89,8 +89,8 @@ const App = () => {
                 <Routes>
                   <Route path="/login" element={<Login />} />
                   <Route path="/" element={<SalesAnalytics />} />
-                  {/* <Route path="sellers-list" element={<SellersList />} />
-                  <Route path="sellers-table" element={<SellersTable />} />
+                  <Route path="/sellers-list" element={<SellersList />} />
+                  {/* <Route path="sellers-table" element={<SellersTable />} />
                   <Route path="sellers-grid" element={<SellersGrid />} />
                   <Route
                     path="products-management"
