@@ -31,7 +31,7 @@ import Copyright from "@components/Copyright";
 import AppBar from "@layout/AppBar";
 
 // pages
-const Login = lazy(() => import("./pages/Login"));
+const Login = lazy(() => import("./pages_shopde/Login"));
 // const SalesAnalytics = lazy(() => import("pages_shopde/SalesAnalytics"));
 // const SellersList = lazy(() => import("pages_shopde/SellersList"));
 // const SellersTable = lazy(() => import("pages_shopde/SellersTable"));
@@ -88,8 +88,8 @@ const App = () => {
               <div className="main">
                 <Routes>
                   <Route path="/login" element={<Login />} />
-                  {/* <Route path="/" element={<SalesAnalytics />} />
-                  <Route path="sellers-list" element={<SellersList />} />
+                  <Route path="/" element={<SalesAnalytics />} />
+                  {/* <Route path="sellers-list" element={<SellersList />} />
                   <Route path="sellers-table" element={<SellersTable />} />
                   <Route path="sellers-grid" element={<SellersGrid />} />
                   <Route

@@ -1,7 +1,10 @@
-const DocumentTitle = () => {
+import { Helmet } from "react-helmet";
+const DocumentTitle = ({ title }) => {
   return (
     <>
-      <p>DocumentTitle</p>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
     </>
   );
 };
